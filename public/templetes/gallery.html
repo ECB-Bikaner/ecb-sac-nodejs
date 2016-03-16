@@ -1,0 +1,13 @@
+<section ng-controller="GalleryCtrl">
+	<div class="blue-grey home-intro">
+		<div class="container">
+			<h3 class="home-intro-heading">Gallery</h3>
+			<p class="home-intro-content">Government Engineering College, Bikaner is one among the most renowned technical institutes of Rajasthan. The institute is known not only for academic excellence but also for offering superior opportunities to its students to participate in recreational and creative activities. These activities are administered through the Student Affairs Council (SAC), which serves as the nerve Centre of all cocurricular activities in the campus.</p>
+		</div>
+	</div>
+	<div class="animated fadeInUp" >
+		<!-- <div ng-repeat="i in pupu" style="display: inline;"> -->
+			<img ng-repeat="i in pupu" style="padding: 2px;width: 49%;" class="responsive-img gallery-img" src="{{i}}">
+		<!-- </div> -->
+	</div>
+</section>

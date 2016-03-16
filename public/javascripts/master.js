@@ -30,10 +30,6 @@
 		$scope.societies = societies;
 	}]);
 
-	app.controller('LoginCtrl',['$scope', function($scope){
-		
-	}]);
-
 	app.controller('GalleryCtrl',['$scope', function($scope){
 		$scope.pupu = ["./images/1.jpg","./images/2.jpg","./images/3.jpg","./images/4.jpg","./images/5.jpg","./images/office.jpg"];
 	}]);
@@ -55,12 +51,6 @@
 		        url: '/home',
 		      	templateUrl: './templetes/home.html',
 		      	controller: 'HomeCtrl'
-	    	})
-
-	    	.state('login', {
-		        url: '/login',
-		      	templateUrl: '/login.html',
-		      	controller: 'LoginCtrl'
 	    	})
 
 	    	.state('gallery', {

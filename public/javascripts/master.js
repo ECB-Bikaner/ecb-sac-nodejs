@@ -1,6 +1,63 @@
 (function(){
 
-	var app = angular.module('sac',['ui.router','clubInfo']);
+	var app = angular.module('sac',['ui.router', 'clubInfo', 'auth0', 'angular-storage', 'angular-jwt']);
+
+//Auth0 functions
+	app.config(function (authProvider) {
+	  authProvider.init({
+	    domain: 'rail.auth0.com',
+	    clientID: 'BR7dnfQB0ExcbUlb9wnL0IXgWUqkPqaF'
+	  });
+	});
+
+	app.run(function(auth) {
+	  // This hooks al auth events to check everything as soon as the app starts
+	  auth.hookEvents();
+	});
+
+	app.run(function($rootScope, auth, store, jwtHelper, $location) {
+	  // This events gets triggered on refresh or URL change
+	  $rootScope.$on('$locationChangeStart', function() {
+	    var token = store.get('token');
+	    if (token) {
+	      if (!jwtHelper.isTokenExpired(token)) {
+	        if (!auth.isAuthenticated) {
+	          auth.authenticate(store.get('profile'), token);
+	        }
+	      } else {
+	        // Either show the login page or use the refresh token to get a new idToken
+	        $location.path('/');
+	      }
+	    }
+	  });
+	});
+
+	app.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location', function ($scope, $http, auth, store, $location) {
+		$scope.login = function () {
+		    auth.signin({}, function (profile, token) {
+		        // Success callback
+		        store.set('profile', profile);
+		      	store.set('token', token);
+		      	$location.path('/');
+		    }, function () {
+		      // Error callback
+		    });
+		}
+		$scope.logout = function() {
+		 	auth.signout();
+		  	store.remove('profile');
+		  	store.remove('token');
+		}
+	}]);
+
+	
+	app.controller('UserInfoCtrl',['$scope', 'auth', function UserInfoCtrl($scope, auth) {
+		$scope.auth = auth;
+	}]);
+
+
+
+
 //temperary stuff
 	var club_id = 0;
 	var society_id = 0;

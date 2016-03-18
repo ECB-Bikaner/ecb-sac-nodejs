@@ -1,12 +1,10 @@
 <section class="event-background">
    <div class="event-upper-background"></div>
 	<div class="container">
-   		<div class="event-page"> <p style="margin: 0px">white page Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   		<div class="event-page">
+            <h3>{{event.event_name}}</h3>
+            <h5>{{event.event_date | date}}</h5>
+            <p style="margin: 0px" ng-bind-html="event.event_info"></p>
    	  </div>
 	</div>
 </section>

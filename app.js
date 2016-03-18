@@ -1,3 +1,7 @@
+var mongoose = require('mongoose');
+require('./models/Events');
+require('./models/Clubs');
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,6 +11,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+mongoose.connect('mongodb://localhost/sac');
 
 var app = express();
 

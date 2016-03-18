@@ -1,12 +1,13 @@
 (function(){
 
-	var app = angular.module('sac',['ui.router', 'clubInfo', 'auth0', 'angular-storage', 'angular-jwt']);
+	var app = angular.module('sac',['ui.router', 'clubInfo', 'auth0', 'angular-storage', 'angular-jwt', 'edit_event', 'ngSanitize']);
 
 //Auth0 functions
 	app.config(function (authProvider) {
 	  authProvider.init({
 	    domain: 'rail.auth0.com',
-	    clientID: 'BR7dnfQB0ExcbUlb9wnL0IXgWUqkPqaF'
+	    clientID: 'BR7dnfQB0ExcbUlb9wnL0IXgWUqkPqaF',
+	    loginState: 'home'
 	  });
 	});
 
@@ -48,6 +49,7 @@
 		  	store.remove('profile');
 		  	store.remove('token');
 		}
+		$scope.auth = auth;
 	}]);
 
 	
@@ -80,6 +82,8 @@
 		}
 	];
 
+
+//controllers master.js
 	app.controller('HeaderCtrl', ['$scope', function($scope){
 	}]);
 
@@ -91,17 +95,45 @@
 		$scope.pupu = ["./images/1.jpg","./images/2.jpg","./images/3.jpg","./images/4.jpg","./images/5.jpg","./images/office.jpg"];
 	}]);
 
-	app.controller('EventCtrl',['$scope', function($scope){
-		
+	app.controller('EventCtrl',['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+		$http.get('/'+ $stateParams.id).success(function(data){
+			$scope.event = data;
+		});
 	}]);
 
+
+//lalit's Allclub.js
+	app.factory("All_clubs",[function(){
+	var o={
+		Society:"Technical Society,ECB",
+		descriptions:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\
+		proident, sunt in culpa qui officia deserunt mollit anim id es laborum.",
+		clubs:["Robotics","tech club","Electro Parichaya"],
+		img:"t.jpg",
+		inforamtions:"Here is some more information about this product that is only revealed once clicked on.",
+	    club_images:"robot.jpg,t.jpg,image.jpg",	
+	};
+	return o;
+	}]);
+	app.controller('Allclubs',['$scope','All_clubs',function($scope,All_clubs){
+		$scope.firstname=All_clubs.Society;
+		$scope.des=All_clubs.descriptions;
+		$scope.club=All_clubs.clubs;
+		$scope.image=All_clubs.img;
+		$scope.information=All_clubs.inforamtions;
+		$scope.club_imag=All_clubs.club_images;
+	}]);
 
 
 // routing
 	app.config([
 	'$stateProvider',
 	'$urlRouterProvider',
-	function($stateProvider, $urlRouterProvider) {
+	function($stateProvider, $urlRouterProvider, $httpProvider, authProvider) {
 
 	    $stateProvider
 	        .state('home', {
@@ -122,11 +154,25 @@
 		      	controller: 'ClubInfoController'
 	    	})
 
+	    	.state('edit_event', {
+		        url: '/edit_event',
+		      	templateUrl: './templetes/edit-event.html',
+		      	controller: 'editEventCtrl', 
+		      	data: { requiresLogin: true }
+	    	})
+
 	    	.state('event', {
-		        url: '/event',
+		        url: '/clubs/event/{id}',
 		      	templateUrl: './templetes/event.html',
 		      	controller: 'EventCtrl'
 	    	})
+
+	    	.state('all_club', {
+		        url: '/all_club',
+		      	templateUrl: './templetes/Allclubs.html',
+		      	controller: 'Allclubs'
+	    	})
+
 
 	  	$urlRouterProvider.otherwise('home');
 	}]);

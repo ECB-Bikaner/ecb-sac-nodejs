@@ -39,12 +39,12 @@
     </div>
   </div>
   <ul class="collapsible" id="staggered-test" data-collapsible="accordion">
-    <li ng-repeat="event in club.event">
+    <li ng-repeat="event in club.event | orderBy: 'event_date'">
      <div class=" blue-grey darken-2 collapsible-header club-info-text-white">
-          <span style="float: left;">{{event.name}}</span>
-          <span style="float: right;">{{event.date | date}}</span>
+          <span style="float: left;">{{event.event_name}}</span>
+          <span style="float: right;">{{event.event_date | date}}</span>
        </div>
-     <div class="collapsible-body"><p>{{event.info}}</p></div>
+     <div class="collapsible-body"><p>{{event.short_info}}</p><a href="#/clubs/event/{{event._id}}">More info</a></div>
     </li>
   </ul>
 

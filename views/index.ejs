@@ -15,33 +15,33 @@
 
 <body class="animated fadeIn">
 	<div class="navbar-fixed">
-	<nav ng-controller="HeaderCtrl">
+	<nav ng-controller="HeaderCtrl" style="background-color:black">
 		<div class="nav-wrapper blue-grey darken-2">
-			<a href="#/home" class="brand-logo left home-brand-logo">SAC</a>
-			<a href="#" data-activates="mobile-demo" class="button-collapse right home-hamburger-menu"><i class="material-icons"> menu </i></a>
-			<ul class="right hide-on-med-and-down">
-		    	<li><a href="#/home">Home</a></li>
-		    	<li ng-controller="LoginCtrl"><a ng-click="login()" href="#/login">Log In (admin only)</a></li>
-		    	<li><a href="collapsible.html">About</a></li>
-		    	<li><a href="mobile.html">Help</a></li>
-		    </ul>
-		  	<ul class="side-nav" id="mobile-demo">
-		  		<li><a href="#/home">Home</a></li>
-		    	<li ng-controller="LoginCtrl"><a ng-click="login()" href="#/login">Log In (admin only)</a></li>
-		    	<li><a href="collapsible.html">About</a></li>
-		    	<li><a href="mobile.html">Help</a></li>
-		    	<li ng-controller="LoginCtrl"><a ng-click="logout()" href="">Log out</a></li>
-			</ul>
+			<div class="container">
+				<a href="#/home" class="brand-logo left home-brand-logo">SAC</a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse right home-hamburger-menu"><i class="material-icons"> menu </i></a>
+				<ul class="right hide-on-med-and-down">
+			    	<li><a href="#/home">Home</a></li>
+			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="">{{auth.profile.nickname}}</a></li>
+			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/login">Log In</a></li>
+			    	<li><a href="collapsible.html">About</a></li>
+			    	<li><a href="mobile.html">Help</a></li>
+			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
+			    </ul>
+			  	<ul class="side-nav" id="mobile-demo">
+			  		<li><a href="#/home">Home</a></li>
+			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="">{{auth.profile.nickname}}</a></li>
+			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/login">Log In</a></li>
+			    	<li><a href="collapsible.html">About</a></li>
+			    	<li><a href="mobile.html">Help</a></li>
+			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 	</div>
-
-	<div ng-controller="UserInfoCtrl">
-		{{auth.profile}}
-	</div>
 	
 	<div ui-view class="animated fadeIn"></div>
-
 
     <footer class="page-footer blue-grey darken-4">
       <div class="container">
@@ -86,6 +86,7 @@
   	<!-- Angular Dependencies -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+  	<script type="text/javascript" src="./javascripts/angular-sanitize.min.js"></script>
 
   	<!-- Auth0 dependencies -->
   	<!-- We use client cookies to save the user credentials -->
@@ -101,5 +102,8 @@
 	<!-- user-defined js files -->
   	<script type="text/javascript" src="/javascripts/master.js"></script>
   	<script type="text/javascript" src="/javascripts/controllers/club_info.js"></script>
+    <script src="./javascripts/controllers/edit-event.js"></script>
+    <script src="./javascripts/bootstrap-colorpicker-module.js"></script>
+    <script src="./javascripts/angular-wysiwyg.js"></script>
 </body>
 </html>

@@ -4,7 +4,9 @@ var uglifycss = require('gulp-uglifycss');
 
 gulp.task('mincss', function() {
 	return gulp.src('public/stylesheets/*.css')
-		.pipe(uglifycss())
+		.pipe(uglifycss({
+			"maxLineLen":80
+		}))
 		.pipe(gulp.dest('public/dists'));
 });
 

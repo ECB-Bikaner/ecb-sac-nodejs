@@ -1,6 +1,6 @@
 (function(){
 
-	var app = angular.module('sac',['ui.router', 'clubInfo', 'auth0', 'angular-storage', 'angular-jwt', 'edit_event', 'ngSanitize']);
+	var app = angular.module('sac',['ui.router', 'clubInfo', 'auth0', 'angular-storage', 'angular-jwt', 'edit_event', 'ngSanitize', 'society_info']);
 
 //Auth0 functions
 	app.config(function (authProvider) {
@@ -60,54 +60,6 @@
 	}]);
 
 
-
-app.factory("society_factory", [function() {
-	var o =  [
-		{
-			name : "Sci-Tech Society",
-			society_info : "Hello",
-			image : "./images/office.jpg",
-			description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-			id : 0,
-			club_ids : [1,2,3]
-		},
-		{
-			name : "Sports and Games Society",
-			society_info : "Hello",
-			image : "./images/office.jpg",
-			description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-			id : 2,
-			club_ids : [1,2,3]
-		},
-		{
-			name : "Arts &Literary Society",
-			society_info : "Hello",
-			image : "./images/office.jpg",
-			description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-			id : 1,
-			club_ids : [1,2,3]
-		},
-		{
-			name : "Vocational Society",
-			society_info : "Hello",
-			image : "./images/office.jpg",
-			description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-			id : 3,
-			club_ids : [1,2,3]
-		},
-		{
-			name : "Student & Social Welfare",
-			society_info : "Hello",
-			image : "./images/office.jpg",
-			description : 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-			id : 4,
-			club_ids : [1,2]
-		}
-	];
-	return o;
-}]);
-
-
 //controllers master.js
 	app.controller('HeaderCtrl', ['$scope', function($scope){
 	}]);
@@ -138,6 +90,7 @@ app.factory("society_factory", [function() {
 		$scope.club=selectedSociety.club_ids;
 		$scope.image=selectedSociety.image;
 		$scope.club_imag=selectedSociety.image;
+		$scope.id = selectedSociety.id;
 	}]);
 
  

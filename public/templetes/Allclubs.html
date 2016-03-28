@@ -12,12 +12,12 @@
                 <img class="activator" alt="image not avilable" src="{{club_imag}}" height="400px" width="400px">
             </div>
             <div class="card-content" >
-                <span class="card-title activator grey-text text-darken-4">{{c}}<i class="material-icons right">more_vert</i></span>
-                <p><a href="#">This is a link</a></p>
+                <span class="card-title activator grey-text text-darken-4">{{c.name}}<i class="material-icons right">more_vert</i></span>
+                <p><a href="#/{{id}}/{{c.id}}">This is a link</a></p>
             </div>
             <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">{{c}}<i class="material-icons right">close</i></span>
-                  <p>{{information}}</p>
+                  <span class="card-title grey-text text-darken-4">{{c.name}}<i class="material-icons right">close</i></span>
+                  <p>{{c.info}}</p>
             </div>
         </div>
     </div>

@@ -1,3 +1,4 @@
+{{pupu}}
 <section>
   <div class="parallax-container">
     <div class="parallax">
@@ -25,43 +26,43 @@
 
 
   <div class="slider">
-  <ul class="slides">
-    <li ng-repeat="src in club.imgSrc">
-      <img ng-src="{{src}}">
-    </li>
-  </ul>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col s12 m12">
-      <h5 style="text-align: center;">Upcoming Events</h5>
-    </div>
+    <ul class="slides">
+      <li ng-repeat="src in club.imgSrc">
+        <img ng-src="{{src}}">
+      </li>
+    </ul>
   </div>
-  <ul class="collapsible" id="staggered-test" data-collapsible="accordion">
-    <li ng-repeat="event in club.event | orderBy: 'event_date'">
-     <div class=" blue-grey darken-2 collapsible-header club-info-text-white">
-          <span style="float: left;">{{event.event_name}}</span>
-          <span style="float: right;">{{event.event_date | date}}</span>
-       </div>
-     <div class="collapsible-body"><p>{{event.short_info}}</p><a href="#/clubs/event/{{event._id}}">More info</a></div>
-    </li>
-  </ul>
 
-  <div class="row">
-    <div class="col s12 m12">
-      <h5 style="text-align: center;">Past Events</h5>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m12">
+        <h5 style="text-align: center;">Upcoming Events</h5>
+      </div>
     </div>
+    <ul class="collapsible" id="staggered-test" data-collapsible="accordion">
+      <li ng-repeat="event in club.event | orderBy: 'event_date'">
+       <div class=" blue-grey darken-2 collapsible-header club-info-text-white">
+            <span style="float: left;">{{event.event_name}}</span>
+            <span style="float: right;">{{event.event_date | date}}</span>
+         </div>
+       <div class="collapsible-body"><p>{{event.short_info}}</p><a href="#/clubs/event/{{event._id}}">More info</a></div>
+      </li>
+    </ul>
+
+    <div class="row">
+      <div class="col s12 m12">
+        <h5 style="text-align: center;">Past Events</h5>
+      </div>
+    </div>
+    <ul class="collapsible" id="staggered-test2" data-collapsible="accordion">
+      <li ng-repeat="event in club.pastEvent">
+         <div class="blue-grey darken-2 collapsible-header club-info-text-white">
+            <span style="float: left;">{{event.name}}</span>
+            <span style="float: right;">{{event.date | date}}</span>
+         </div>
+       <div class="collapsible-body"><p>{{event.info}}</p></div>
+      </li>
+    </ul>
   </div>
-  <ul class="collapsible" id="staggered-test2" data-collapsible="accordion">
-    <li ng-repeat="event in club.pastEvent">
-       <div class="blue-grey darken-2 collapsible-header club-info-text-white">
-          <span style="float: left;">{{event.name}}</span>
-          <span style="float: right;">{{event.date | date}}</span>
-       </div>
-     <div class="collapsible-body"><p>{{event.info}}</p></div>
-    </li>
-  </ul>
-</div>
-<link rel="stylesheet" type="text/css" href="./dists/club-info.css">
+  <link rel="stylesheet" type="text/css" href="./dists/club-info.css">
 </section>

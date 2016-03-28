@@ -10,6 +10,7 @@ app.controller('editEventCtrl',['$scope', '$http', 'auth', '$window', function($
         event_club: auth.profile.nickname
     };
 
+
     $scope.submit = function() {
         if ($scope.event.event_info && $scope.event.event_name && $scope.event.event_date && $scope.event.short_info ) {
           // $scope.event_list.push($scope.event);

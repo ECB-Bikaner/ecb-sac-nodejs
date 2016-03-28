@@ -13,11 +13,12 @@ app.controller('editEventCtrl',['$scope', '$http', 'auth', '$window', function($
     $scope.submit = function() {
         if ($scope.event.event_info && $scope.event.event_name && $scope.event.event_date && $scope.event.short_info ) {
           // $scope.event_list.push($scope.event);
-          $http.post('/home', $scope.event);
-          $scope.event = {};
-          $scope.event.event_info = '';
-          $scope.message = '';
-          $window.location.href = '#/clubs/event/56eb9e80d5b9cd6c0e15e2dd';
+          $http.post('/home', $scope.event).success(function(data) {
+            $scope.event = {};
+            $scope.event.event_info = '';
+            $scope.message = '';
+            $window.location.href = '#/clubs/event/'+data._id;
+          });
         } else {
           $scope.message = 'Please Fill All Feilds';
         }

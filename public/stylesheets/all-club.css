@@ -34,10 +34,14 @@ body {
 	font-style: normal;
 }
 .description{
+	font-size: 1.3em;
 	color: white;
 	text-align: justify;
 	margin-left: 10%;
 	margin-right: 10%;
+	padding-bottom: 30px;
+	padding-top: 20px;
+
 }
 .image_responsive{
 	max-width:90%;

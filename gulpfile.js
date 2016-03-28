@@ -15,6 +15,9 @@ gulp.task('minjs', function() {
 		.pipe(uglify({
 			mangle: false
 		}))
+		.on('error', function(err){
+			console.log(err.fileName, err.lineNumber, err.message);
+		})
 		.pipe(gulp.dest('public/dists'));
 });
 

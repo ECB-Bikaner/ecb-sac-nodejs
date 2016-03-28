@@ -14,7 +14,7 @@ router.get('/home', function(req, res, next) {
   	});
 });
 
-//7 routes for 7 clubs
+//6 routes for 6 clubs
 
 	//sci-tech(0) -- electroparichay(0)
 	router.get('/0/0', function(req, res, next){

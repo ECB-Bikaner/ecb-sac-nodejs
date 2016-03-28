@@ -20,6 +20,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-uglify": "^1.5.3",
-    "gulp-uglifycss": "^1.0.6"
+    "gulp-uglifycss": "^1.0.6",
+    "gulp-util": "^3.0.7"
   }
 }

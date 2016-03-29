@@ -1,6 +1,12 @@
 (function(){
   var app = angular.module("clubInfo", ['society_info']);
 
+  app.controller('eventCtrl', ['$scope' ,'$http', '$stateParams', function($scope, $http, $stateParams){
+    $http.get('/' + $stateParams.society_id + '/' + $stateParams.club_id).success(function(data){
+      $scope.events = data;
+    });
+  }]);
+
   app.controller("ClubInfoController", ['$scope', 'society_factory', '$stateParams', function($scope, society_factory, $stateParams) {
 
     selectedSociety = society_factory.find(function(element){

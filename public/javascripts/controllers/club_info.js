@@ -27,7 +27,7 @@
 
     Materialize.scrollFire(options);
     $('.parallax').parallax();
-    $('.slider').slider({indicators:true});
+    $('.carousel').carousel();
     $('.collapsible').collapsible({
       accordion : true // A setting that changes the collapsible behavior to expandable instead of the default accordion style
     });

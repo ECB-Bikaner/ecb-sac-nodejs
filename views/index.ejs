@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="./stylesheets/master.css">
 </head>
 
-<body class="animated fadeIn">
+<body class="animated fadeIn" style="background-color: #eee">
 	<div class="navbar-fixed">
 	<nav ng-controller="HeaderCtrl" style="background-color:black">
 		<div class="nav-wrapper blue-grey darken-2">
@@ -23,7 +23,7 @@
 			    	<li><a href="#/home">Home</a></li>
 			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="">{{auth.profile.nickname}}</a></li>
 			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/login">Log In</a></li>
-			    	<li><a href="collapsible.html">About</a></li>
+			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
 			    	<li><a href="mobile.html">Help</a></li>
 			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
 			    </ul>
@@ -31,7 +31,7 @@
 			  		<li><a href="#/home">Home</a></li>
 			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="">{{auth.profile.nickname}}</a></li>
 			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/login">Log In</a></li>
-			    	<li><a href="collapsible.html">About</a></li>
+			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
 			    	<li><a href="mobile.html">Help</a></li>
 			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
 				</ul>
@@ -46,8 +46,8 @@
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <h5 class="white-text">ECB SAC</h5>
+            <p class="grey-text text-lighten-4"></p>
           </div>
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Links</h5>
@@ -62,8 +62,8 @@
       </div>
       <div class="footer-copyright black">
         <div class="container">
-        &copy 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        &copy 2016 Copyright ECB SAC. MIT Licence. 
+        <a class="grey-text text-lighten-4 right">Created By Atul Sharma, Ishan Saxena, Lilit Kishor & Rajat Patwa.</a>
         </div>
       </div>
     </footer>

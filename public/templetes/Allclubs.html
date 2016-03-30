@@ -1,23 +1,32 @@
 <section>
-    <div class="body">
+    <div class="blue-grey home-intro">
+        <div class="container">
+            <h3 class="home-intro-heading">{{firstname}}</h3>
+            <p class="home-intro-content">{{des}}</p>
+        </div>
+    </div>
+    <!-- <div class="body">
     	  <div class="society"><h3>{{firstname}}</h3></div>
     	  <div class="image_responsive">
             <img ng-src="{{image}}">
     	  </div>
     	  <p class="description">{{des}}</p>
-    </div>
-    <div class="container"  ng-repeat="c in club" >
-        <div class="card">
-            <div class="card-image waves-effect waves-block waves-light" >
-                <img class="activator" alt="image not avilable" src="{{club_imag}}" >
-            </div>
-            <div class="card-content" >
-                <span class="card-title activator grey-text text-darken-4">{{c.name}}<i class="material-icons right">more_vert</i></span>
-                <p><a href="#/{{id}}/{{c.id}}">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">{{c.name}}<i class="material-icons right">close</i></span>
-                  <p>{{c.info}}</p>
+    </div> -->
+    <h3 class="center">Clubs</h3>
+    <div class="container row">
+        <div class="col s12 m6 l4"  ng-repeat="c in club" >
+            <div class="card">
+                <div class="card-image waves-effect waves-block waves-light" >
+                    <img class="activator" alt="image not avilable" src="{{club_imag}}" >
+                </div>
+                <div class="card-content" >
+                    <span class="card-title activator grey-text text-darken-4">{{c.name}}<i class="material-icons right">more_vert</i></span>
+                    <p><a href="#/{{id}}/{{c.id}}">This is a link</a></p>
+                </div>
+                <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">{{c.name}}<i class="material-icons right">close</i></span>
+                      <p>{{c.info}}</p>
+                </div>
             </div>
         </div>
     </div>

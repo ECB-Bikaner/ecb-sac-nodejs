@@ -1,6 +1,2 @@
 body{background-color:#eee;z-index:-50}.event-upper-background{background-color:#90a4ae;height:30vh;position:fixed;top:0;width:100%;z-index:-10}
 .event-page{background-color:white;box-shadow:0 0 10px grey;padding:60px 30px 60px 30px;min-height:400px;top:0;left:0;margin-top:75px}
-.body{background-color:#607d8b}.society{text-align:center;padding-top:10px;color:white;font-style:normal}
-.description{font-size:1.3em;color:white;text-align:justify;margin-left:10%;margin-right:10%;padding-bottom:30px;padding-top:20px}
-.image_responsive{max-width:90%;height:auto;position:relative;display:block;margin:0 auto}
-.image_responsive img{width:100% !important;height:100% !important;display:block}

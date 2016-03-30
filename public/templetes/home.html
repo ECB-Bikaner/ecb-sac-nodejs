@@ -7,7 +7,7 @@
 <section class="container">
 	<h3 class="center">Societies</h3>
 	<div class="row">
-      <div class="col s12 m5">
+      <div class="col s12 m12 l12">
         <div class="card-panel teal">
           <span class="white-text">I am a very simple card. I am good at containing small bits of information.
           I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
@@ -15,19 +15,21 @@
         </div>
       </div>
     </div>
-	<div ng-repeat="s in societies">
-	  <div class="card">
-	    <div class="card-image waves-effect waves-block waves-light">
-	      <img class="activator" src="{{s.image}}">
-	    </div>
-	    <div class="card-content">
-	      <span class="card-title activator grey-text text-darken-4">{{s.name}}<i class="material-icons right">more_vert</i></span>
-	      <p><a class="btn waves-effect waves-light" href="#/{{s.id}}">more</a></p>
-	    </div>
-	    <div class="card-reveal">
-	      <span class="card-title grey-text text-darken-4">{{s.name}}<i class="material-icons right">close</i></span>
-	      <p>{{s.society_info}}<br><br><a class="btn waves-effect waves-light" href="#/{{s.id}}">more</a></p>
-	    </div>
-	  </div>
+    <div class="row">
+		<div ng-repeat="s in societies" class="col s12 m6 l6">
+		  <div class="card">
+		    <div class="card-image waves-effect waves-block waves-light">
+		      <img class="activator" src="{{s.image}}">
+		    </div>
+		    <div class="card-content">
+		      <span class="card-title activator grey-text text-darken-4">{{s.name}}<i class="material-icons right">more_vert</i></span>
+		      <p><a class="btn waves-effect waves-light" href="#/{{s.id}}">more</a></p>
+		    </div>
+		    <div class="card-reveal">
+		      <span class="card-title grey-text text-darken-4">{{s.name}}<i class="material-icons right">close</i></span>
+		      <p>{{s.society_info}}<br><br><a class="btn waves-effect waves-light" href="#/{{s.id}}">more</a></p>
+		    </div>
+		  </div>
+		</div>
 	</div>
 </section>

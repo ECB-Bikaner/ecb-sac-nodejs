@@ -2,9 +2,16 @@
 .club-info-text-white {
   color: white;
 }
+@media only screen and (orientation: landscape){
+	.parallax-container {
+	  height: 100vh;
+	}
+}
 
-.parallax-container {
-  height: 50vh;
+@media only screen and (orientation: portrait){
+	.parallax-container {
+	  height: 50vh;
+	}
 }
 
 #staggered-test > li{

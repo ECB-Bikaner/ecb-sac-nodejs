@@ -64,8 +64,12 @@
 	app.controller('HeaderCtrl', ['$scope', function($scope){
 	}]);
 
-	app.controller('HomeCtrl',['$scope', 'society_factory', function($scope, society_factory){
+	app.controller('HomeCtrl',['$scope','$http' ,'society_factory', function($scope, $http, society_factory){
 		$scope.societies = society_factory;
+		$http.get('/home').success(function(data){
+			console.log(data);
+			$scope.home_events = data;
+		});
 	}]);
 
 	app.controller('GalleryCtrl',['$scope', function($scope){

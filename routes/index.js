@@ -100,6 +100,15 @@ router.get('/home', function(req, res, next) {
 	  });
 	});
 
+//Route to delete an event
+	router.delete('/:event', function(req, res, next) {
+		Event.remove(req.event, function(err, eventRemoved) {
+			if(err) {
+				return next(err);
+			}
+			res.json(eventRemoved);
+		});
+	});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

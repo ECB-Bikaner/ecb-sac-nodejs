@@ -76,10 +76,25 @@
 		$scope.pupu = ["./images/1.jpg","./images/2.jpg","./images/3.jpg","./images/4.jpg","./images/5.jpg","./images/office.jpg"];
 	}]);
 
-	app.controller('EventCtrl',['$scope', '$http', '$stateParams', function($scope, $http, $stateParams){
+	app.controller('EventCtrl',['$scope', '$http', '$stateParams', 'auth', '$window', function($scope, $http, $stateParams, auth, $window){
 		$http.get('/'+ $stateParams.id).success(function(data){
 			$scope.event = data;
 		});
+
+		$scope.auth = auth;
+
+		$scope.delete = function(event) {
+			if(auth.profile.nickname === event.event_club){
+				$http.delete('/'+event._id).success(function(){
+					$window.location.href = '#/home';
+				});
+			}
+		};
+
+		$scope.showDelete = function(event) {
+			return auth.profile.nickname === event.event_club;
+		};
+
 	}]);
   
 

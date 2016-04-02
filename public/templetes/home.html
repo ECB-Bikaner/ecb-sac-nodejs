@@ -1,7 +1,11 @@
-<div class="blue-grey home-intro">
+<div  style="background-image: url('http://thumbs.dreamstime.com/z/school-education-seamless-background-file-eps-format-31975871.jpg'); background-repeat: no-repeat; background-size: cover;
+background-position: center; height: 95vh;">
+<div class="home-intro" style="height: 100%; background-color: rgba(96, 125, 139, 0.65);">
+	
 	<div class="container">
 		<h3 class="home-intro-heading">Student Activity Center</h3>
 		<p class="home-intro-content">Government Engineering College, Bikaner is one among the most renowned technical institutes of Rajasthan. The institute is known not only for academic excellence but also for offering superior opportunities to its students to participate in recreational and creative activities. These activities are administered through the Student Affairs Council (SAC), which serves as the nerve Centre of all cocurricular activities in the campus.</p>
+	</div>
 	</div>
 </div>
 <section style="margin-bottom: 50px" class="container">
@@ -11,7 +15,7 @@
 		<p style="color:grey; font-size: 20px">These are upcoming events from all the clubs arrenged by earliest first.</p>
 		  <ul class="collapsible" data-collapsible="accordion">
 		      <li ng-repeat="event in home_events | orderBy: 'event_date' | limitTo: 10">
-		       <div class="blue-grey white-text collapsible-header club-info-text-white">
+		       <div class="blue-grey darken-2 white-text collapsible-header club-info-text-white">
 		            <span style="float: left;">{{event.event_name}}</span>
 		            <span style="float: right;">{{event.event_club}} | {{event.event_date | date}}</span>
 		         </div>
@@ -42,16 +46,16 @@
 		<div class="col s12 m6 l6">
 			<div class="row">
 		      <div ng-repeat="club in s.club_ids" class="col s12 m6">
-		        <div class="card-panel white">
-		          <span><a class="{{s.color}}-text" href="#/{{s.id}}/{{club.id}}">{{club.name}}</a></span><hr>
+		        <div class="card-panel white hoverable">
+		          <a class="{{s.color}}-text" href="#/{{s.id}}/{{club.id}}"><span>{{club.name}}</span><hr>
 		          <span class="{{s.color}}-text">I am a very simple card. I am good at containing small bits of information.
-		          </span>
+		          </span></a>
 		        </div>
 		      </div>
 		    </div>
 		</div>
-		<div ng-hide="{{s.club_ids[0]}}" class="col s12 m6">
-			<i  class="material-icons home-icon center">track_changes</i>
+		<div ng-hide="{{s.club_ids[0]}}" class="col s12 m6 center-align">
+			<i  class="material-icons home-icon center">error_outline</i>
 		</div>
 	</div>
 </section>

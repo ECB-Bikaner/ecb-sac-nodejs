@@ -67,13 +67,29 @@
 	app.controller('HomeCtrl',['$scope','$http' ,'society_factory', function($scope, $http, society_factory){
 		$scope.societies = society_factory;
 		$http.get('/home').success(function(data){
-			console.log(data);
 			$scope.home_events = data;
 		});
+
+		$('.collapsible').collapsible({
+      		accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    	});
 	}]);
 
 	app.controller('GalleryCtrl',['$scope', function($scope){
-		$scope.pupu = ["./images/1.jpg","./images/2.jpg","./images/3.jpg","./images/4.jpg","./images/5.jpg","./images/office.jpg"];
+		$("#nanoGallery2").nanoGallery({
+          	kind: 'picasa',
+          	userID: '100385871696349461908',
+          	thumbnailWidth: 'auto',
+  		  	thumbnailHeight: 250,
+  		  	colorScheme: 'none',
+  		  	theme: 'light',
+  		  	thumbnailGutterWidth : 0,
+    	  	thumbnailGutterHeight : 0,
+  		  	thumbnailHoverEffect: [{ name: 'labelAppear75', duration: 300 }],
+          	album: '6269438245450732561',
+          	i18n: { thumbnailImageDescription: 'View Photo', thumbnailAlbumDescription: 'Open Album' },
+          	thumbnailLabel: { display: true, position: 'overImageOnMiddle', align: 'center' }
+	    });
 	}]);
 
 	app.controller('EventCtrl',['$scope', '$http', '$stateParams', 'auth', '$window', function($scope, $http, $stateParams, auth, $window){
@@ -158,7 +174,7 @@
 	    	})
 
 
-	  	$urlRouterProvider.otherwise('home');
-	}]);
+
+	}]);
 
 }());

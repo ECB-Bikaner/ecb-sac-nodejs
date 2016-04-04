@@ -126,6 +126,7 @@
 		$scope.image=selectedSociety.image;
 		$scope.club_imag=selectedSociety.image;
 		$scope.id = selectedSociety.id;
+		$scope.full_description = selectedSociety.full_description;
 	}]);
 
  

@@ -78,7 +78,7 @@
 	app.controller('GalleryCtrl',['$scope', function($scope){
 		$("#nanoGallery2").nanoGallery({
           	kind: 'picasa',
-          	userID: '100385871696349461908',
+          	userID: '106243281408517682763',
           	thumbnailWidth: 'auto',
   		  	thumbnailHeight: 250,
   		  	colorScheme: 'none',
@@ -86,7 +86,7 @@
   		  	thumbnailGutterWidth : 0,
     	  	thumbnailGutterHeight : 0,
   		  	thumbnailHoverEffect: [{ name: 'labelAppear75', duration: 300 }],
-          	album: '6269438245450732561',
+          	album: '6269762581534518769',
           	i18n: { thumbnailImageDescription: 'View Photo', thumbnailAlbumDescription: 'Open Album' },
           	thumbnailLabel: { display: true, position: 'overImageOnMiddle', align: 'center' }
 	    });

@@ -15,6 +15,18 @@
 
 <body class="animated fadeIn" style="background-color: #eee">
 	<div class="navbar-fixed">
+
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="#/0/0">Electrop..</a></li>
+	  <li><a href="#/0/3">Robotics</a></li>
+	  <li><a href="#/0/5">Tech Club</a></li>
+	  <li class="divider"></li>
+	  <li><a href="#/1/1">Fiducia</a></li>
+	  <li><a href="#/1/2">MAD</a></li>
+	  <li><a href="#/1/4">SCHED</a></li>
+	</ul>
+
 	<nav ng-controller="HeaderCtrl" style="background-color:black">
 		<div class="nav-wrapper blue-grey darken-2">
 			<div class="container">
@@ -27,11 +39,21 @@
 			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/login">Log In</a></li>
 			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
 			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
+			    	<!-- Dropdown Trigger -->
+      				<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Clubs<i class="material-icons right">arrow_drop_down</i></a></li>
 			    </ul>
 			  	<ul class="side-nav" id="mobile-demo">
 			  		<li><a href="#/home">Home</a></li>
 			    	<li><a href="#/gallery">Gallery</a></li>
 			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="">{{auth.profile.nickname}}</a></li>
+					<li class="divider"></li>
+			    	<li><a href="#/0/0">Electroparichay</a></li>
+					<li><a href="#/0/3">Robotics</a></li>
+					<li><a href="#/0/5">Tech Club</a></li>
+					<li><a href="#/1/1">Fiducia</a></li>
+					<li><a href="#/1/2">MAD</a></li>
+					<li><a href="#/1/4">SCHED</a></li>
+					<li class="divider"></li>
 			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/login">Log In</a></li>
 			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
 			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
@@ -80,6 +102,7 @@
 			    edge: 'right', // Choose the horizontal origin
 			    closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
 			});
+			$(".dropdown-button").dropdown();
 		})
 	</script>
 

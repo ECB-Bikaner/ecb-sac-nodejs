@@ -40,3 +40,10 @@
 .home-icon{
 	font-size: 200px;
 }
+
+
+@media only screen and (max-width: 760px){
+	.optional-content{
+		display: none;
+	}
+}

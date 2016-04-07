@@ -35,8 +35,8 @@
 				<ul class="right hide-on-med-and-down">
 			    	<li><a href="#/home">Home</a></li>
 			    	<li><a href="#/gallery">Gallery</a></li>
-			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="">{{auth.profile.nickname}}</a></li>
-			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/login">Log In</a></li>
+			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="edit_event">{{auth.profile.nickname}}</a></li>
+			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/home">Log In</a></li>
 			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
 			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
 			    	<!-- Dropdown Trigger -->
@@ -45,7 +45,7 @@
 			  	<ul class="side-nav" id="mobile-demo">
 			  		<li><a href="#/home">Home</a></li>
 			    	<li><a href="#/gallery">Gallery</a></li>
-			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="">{{auth.profile.nickname}}</a></li>
+			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="#/edit_event">{{auth.profile.nickname}}</a></li>
 					<li class="divider"></li>
 			    	<li><a href="#/0/0">Electroparichay</a></li>
 					<li><a href="#/0/3">Robotics</a></li>
@@ -54,7 +54,7 @@
 					<li><a href="#/1/2">MAD</a></li>
 					<li><a href="#/1/4">SCHED</a></li>
 					<li class="divider"></li>
-			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/login">Log In</a></li>
+			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/home">Log In</a></li>
 			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
 			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>
 				</ul>
@@ -129,5 +129,6 @@
     <script src="./javascripts/bootstrap-colorpicker-module.js"></script>
     <script src="./javascripts/angular-wysiwyg.js"></script>
     <script type="text/javascript" src="./javascripts/factories/society_info.js"></script>
+
 </body>
 </html>

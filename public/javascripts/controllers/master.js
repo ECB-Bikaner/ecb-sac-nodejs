@@ -35,11 +35,11 @@
 
 	app.controller('LoginCtrl', ['$scope', '$http', 'auth', 'store', '$location', function ($scope, $http, auth, store, $location) {
 		$scope.login = function () {
-		    auth.signin({}, function (profile, token) {
+		    auth.signin({scope: 'openid name email'}, function (profile, token) {
 		        // Success callback
 		        store.set('profile', profile);
 		      	store.set('token', token);
-		      	$location.path('/');
+		      	$location.path('/home');
 		    }, function () {
 		      // Error callback
 		    });

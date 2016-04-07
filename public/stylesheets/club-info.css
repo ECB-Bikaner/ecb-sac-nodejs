@@ -4,7 +4,7 @@
 }
 @media only screen and (orientation: landscape){
 	.parallax-container {
-	  height: 100vh;
+	  height: 50vh;
 	}
 }
 

@@ -43,20 +43,15 @@ background-position: center; height: 95vh;">
 	<div class="row container">
 		<div class="col s12 m6 l6 {{s.alignment}}">
 			<h3><a href="#/{{s.id}}" class="white-text">{{s.name}}</a></h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>{{s.description}}</p>
 		</div>
 		<div class="col s12 m6 l6">
 			<div class="row">
 		      <div ng-repeat="club in s.club_ids" class="col s12 m6">
 		        <div class="card-panel white hoverable">
-		          <a class="blue-grey-text" href="#/{{s.id}}/{{club.id}}"><span>{{club.name}}</span><hr>
-		          <span class="blue-grey-text">I am a very simple card. I am good at containing small bits of information.
-		          </span></a>
+		          <a class="blue-grey-text" href="#/{{s.id}}/{{club.id}}"><span><h6><b>{{club.name}}</b></h6></span><hr>
+		          <span class="blue-grey-text">{{club.info | limitTo:250}}... </span><span class="blue-text"> more</span></a>
+
 		        </div>
 		      </div>
 		    </div>

@@ -35,7 +35,7 @@
 				<ul class="right hide-on-med-and-down">
 			    	<li><a href="#/home">Home</a></li>
 			    	<li><a href="#/gallery">Gallery</a></li>
-			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="edit_event">{{auth.profile.nickname}}</a></li>
+			    	<li ng-controller="UserInfoCtrl" ng-show="auth.profile"><a href="#/edit_event">{{auth.profile.nickname}}</a></li>
 			    	<li ng-controller="LoginCtrl" ng-hide="auth.profile"><a ng-click="login()" href="#/home">Log In</a></li>
 			    	<li ng-controller="UserInfoCtrl"  ng-show="auth.profile"><a href="#/edit_event">Create Event</a></li>
 			    	<li ng-controller="LoginCtrl" ng-show="auth.profile"><a ng-click="logout()" href="">Log out</a></li>

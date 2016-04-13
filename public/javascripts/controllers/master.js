@@ -195,6 +195,11 @@
 		      	controller: 'Allclubs'
 	    	})
 
+	    	.state('/', {
+		        url: '',
+		      	templateUrl: './templetes/home.html',
+		      	controller: 'HomeCtrl'
+	    	})
 
 
 	}]);
